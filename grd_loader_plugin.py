@@ -61,7 +61,7 @@ class GeosoftGrdLoaderPlugin:
 
     def run(self):
         dialog = GrdLoaderDialog(self.iface.mainWindow())
-        if not dialog.exec_():
+        if not dialog.exec():
             return
 
         grd_path = dialog.selected_file()
@@ -153,7 +153,7 @@ class GeosoftGrdLoaderPlugin:
 
     def run_batch(self):
         dialog = BatchGrdLoaderDialog(self.iface.mainWindow())
-        if not dialog.exec_():
+        if not dialog.exec():
             return
 
         grd_paths = dialog.grd_files()

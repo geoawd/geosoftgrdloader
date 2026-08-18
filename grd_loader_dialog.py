@@ -66,9 +66,15 @@ class GrdLoaderDialog(QDialog):
         layout.addWidget(self.crs_hint)
 
         # --- OK / Cancel ---
-        buttons = QDialogButtonBox(
-            QDialogButtonBox.Ok | QDialogButtonBox.Cancel
-        )
+        # Use Qt6 enum path if available, with fallback for older shims
+        try:
+            buttons = QDialogButtonBox(
+                QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
+            )
+        except AttributeError:
+            buttons = QDialogButtonBox(
+                QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+            )
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
         layout.addWidget(buttons)
