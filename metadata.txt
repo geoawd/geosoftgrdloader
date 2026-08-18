@@ -1,18 +1,20 @@
 [general]
 name=Geosoft GRD Loader
 qgisMinimumVersion=3.16
-description=Load Oasis Montaj (Geosoft) binary .grd grid files into QGIS as raster layers.
-version=1.0.0
+description=Load Oasis Montaj (Geosoft) binary .grd grid files into QGIS as raster layers, one at a time or in batch.
+version=1.1.0
 author=Shyam Mishra
 email=mxhyam@gmail.com
-
-about=A simple plugin to load Geosoft/Oasis Montaj binary .grd grid files directly into QGIS. Select a .grd file, optionally set a coordinate reference system, and the grid is converted to a GeoTIFF and added as a raster layer.
-
+about=A simple plugin to load Geosoft/Oasis Montaj binary .grd grid files directly into QGIS. Select a single .grd file, or a folder / multiple files for batch conversion, optionally set a coordinate reference system, and each grid is converted to a GeoTIFF and added as a raster layer.
+changelog=1.1.0
+    - Added batch conversion: select a folder or multiple .grd files and convert them all using one shared CRS.
+    1.0.0
+    - Initial release.
 license=GPL version 3
 tracker=https://github.com/mellow2334/geosoftgrdloader/issues
 repository=https://github.com/mellow2334/geosoftgrdloader
 homepage=https://github.com/mellow2334/geosoftgrdloader
-tags=geosoft,oasis montaj,grd,grid,raster,geophysics
+tags=geosoft,oasis montaj,grd,grid,raster,geophysics,batch
 category=Raster
 icon=icon.png
 experimental=False
