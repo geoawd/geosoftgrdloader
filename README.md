@@ -40,6 +40,21 @@ Plugin Manager.
 4. Click **OK**. The GeoTIFF is written to the chosen location and
    loaded as a raster layer — no separate "save" step needed afterward.
 
+
+## Batch conversion
+1. Click **Raster menu → Geosoft GRD Loader → Batch Convert Geosoft
+   GRD...**.
+2. Use **Add Files...** and/or **Add Folder...** (with **Include
+   subfolders** if needed) to build up the list of `.grd` files to
+   convert. Use **Remove Selected** / **Clear All** to edit the list.
+3. Optionally set an output folder — otherwise each `.tif` lands next to
+   its source `.grd`.
+4. Optionally pick a CRS. It's applied to **every** file in the batch.
+5. Optionally check **Skip files whose output .tif already exists** to
+   avoid re-converting files you've already processed.
+6. Click **OK** and watch the progress dialog. A summary appears when
+   it's done.
+
 ## Notes / limitations
 
 - Supports Geosoft GRD **Version 2** binary files (`ES`, `SF`, `NE`,
