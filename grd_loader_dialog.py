@@ -67,14 +67,7 @@ class GrdLoaderDialog(QDialog):
 
         # --- OK / Cancel ---
         # Use Qt6 enum path if available, with fallback for older shims
-        try:
-            buttons = QDialogButtonBox(
-                QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
-            )
-        except AttributeError:
-            buttons = QDialogButtonBox(
-                QDialogButtonBox.Ok | QDialogButtonBox.Cancel
-            )
+        buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
         layout.addWidget(buttons)

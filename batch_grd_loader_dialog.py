@@ -57,12 +57,8 @@ class BatchGrdLoaderDialog(QDialog):
         # --- File list ---
         layout.addWidget(QLabel("Files queued for conversion:"))
         self.file_list = QListWidget()
-        # Qt6 moved enum members under the enum class; use SelectionMode.
-        try:
-            self.file_list.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
-        except AttributeError:
-            # Fallback for older PyQt versions / shims that still expose the old name
-            self.file_list.setSelectionMode(QAbstractItemView.ExtendedSelection)
+        
+        self.file_list.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
         self.file_list.setMinimumHeight(160)
         layout.addWidget(self.file_list)
 
@@ -122,15 +118,7 @@ class BatchGrdLoaderDialog(QDialog):
         layout.addWidget(self.add_to_map_check)
 
         # --- OK / Cancel ---
-        # Use Qt6 enum path if available, with fallback for older shims
-        try:
-            buttons = QDialogButtonBox(
-                QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel
-            )
-        except AttributeError:
-            buttons = QDialogButtonBox(
-                QDialogButtonBox.Ok | QDialogButtonBox.Cancel
-            )
+        buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
         buttons.accepted.connect(self._on_accept)
         buttons.rejected.connect(self.reject)
         layout.addWidget(buttons)
