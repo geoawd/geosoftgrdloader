@@ -6,7 +6,9 @@ version=1.1.0
 author=Shyam Mishra
 email=mxhyam@gmail.com
 about=A simple plugin to load Geosoft/Oasis Montaj binary .grd grid files directly into QGIS. Select a single .grd file, or a folder / multiple files for batch conversion, optionally set a coordinate reference system, and each grid is converted to a GeoTIFF and added as a raster layer.
-changelog=1.1.0
+changelog=1.2.0
+    - Fixed enum imports
+    1.1.0
     - Added batch conversion: select a folder or multiple .grd files and convert them all using one shared CRS.
     1.0.0
     - Initial release.
