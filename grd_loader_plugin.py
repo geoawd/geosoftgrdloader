@@ -171,7 +171,7 @@ class GeosoftGrdLoaderPlugin:
             "Converting GRD files...", "Cancel", 0, total, self.iface.mainWindow()
         )
         progress.setWindowTitle("Batch Convert Geosoft GRD Files")
-        progress.setWindowModality(Qt.WindowModal)
+        progress.setWindowModality(Qt.WindowModality.WindowModal)
         progress.setMinimumDuration(0)
 
         def on_progress(index, count, current_path):
